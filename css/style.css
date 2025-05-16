@@ -1,0 +1,264 @@
+:root{
+    --marginSection : 16px;
+    --primaryColor : #5f8db5;
+    font-size: 16px;
+}
+
+.btn{
+    width: 45%;
+    background-color: var(--primaryColor);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 8px;
+    border: none;
+    margin: 8px 0;
+    border-radius: 3px;
+}
+.btn:hover{
+    background-color: rgb(82, 129, 169);
+    letter-spacing: 0.1px;
+}
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* @media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+} */
+/* @media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+} */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+body{
+    padding: 0 16px;
+    font-family:sans-serif;
+}
+
+header{
+    margin: 32px auto;
+    padding: 16px;
+}
+header h1 , header p{
+    margin-left: auto;
+    margin-right: auto;
+}
+header h1{
+    background-color: var(--primaryColor);
+    color: white;
+    font-weight: bolder;
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+}
+header p{
+    width: fit-content;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+/*End Header*/
+
+/*Start Inpots .inputs*/
+
+.inputs{
+    margin-top: var(--marginSection);
+    margin-bottom: var(--marginSection);
+    font-size: 16px;
+    align-items: center;
+    text-align: center;
+
+}
+
+input{
+    outline: none;
+    margin-top: 16px;
+    padding: 8px;
+    border: 1px solid var(--primaryColor);
+    border-radius: 3px;
+    transition: 0.2s;
+}
+
+input:focus{
+    background-color: #5f8db522;;
+    transform: scale(1.02);
+    color: var(--primaryColor);
+}
+
+input::placeholder{
+    color: var(--primaryColor)
+}
+
+.inputs #title{
+    width: 100%;
+}
+
+.inputs .price{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width:767px) {
+    .inputs .price input{
+        width: 100%;
+    }
+}
+
+.inputs .price #total{
+    padding: 8px;
+    background-color: var(--primaryColor);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    margin-top: 16px;
+    align-self: center;
+}
+.inputs .price #total::before{
+    content: "Total: ";
+}
+
+@media (max-width:767px) {
+    .inputs .price #total{
+        margin: auto;
+        margin-top: 16px;
+    }
+}
+
+.inputs  .count-category{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inputs  .count-category input{
+    width: 45%;
+}
+
+.inputs [type="submit"]{
+    margin-top: 16px;
+    background-color: #2db62d;
+}
+.inputs [type="submit"]:hover{
+    background-color: #149d14;
+}
+
+@media (max-width:767px) {
+    .inputs [type="submit"]{
+        width: 100%;
+    }
+}
+
+/*End Inpots inputs*/
+
+
+/*Start Inpots Outputs*/
+
+.outputs{
+    margin-top: var(--marginSection);
+    margin-bottom: var(--marginSection);
+}
+
+
+.outputs .searchBlock > input{
+    width: 100%;
+}
+.outputs .searchBlock > .btnsearch{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.outputs .searchBlock > .btnsearch button:focus{
+    outline: none;
+}
+
+@media (max-width:730px) {
+    .outputs .searchBlock .con-table{
+    overflow-x: scroll;
+}
+}
+
+.outputs .searchBlock  table{
+    width: 100%;
+    text-align: center;
+    margin: 8px 0;
+    background-color: #5f8db526;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    overflow-x: scroll;
+}
+.outputs .searchBlock  table thead th{
+    background-color: var(--primaryColor);
+    color: white;
+}
+th,td{
+    padding: 8px;
+}
+
+.outputs .searchBlock table tr{
+    background-color: #5f8db526;
+}
+
+
+table tbody #update,table tbody #delete{
+    padding: 5px;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+    height: 100%;
+}
+
+table tbody #update{
+background-color: #00aaff;
+}
+table tbody #update:hover{
+background-color: #0091d9;
+}
+table tbody #delete{
+background-color: red;
+}
+table tbody #delete:hover{
+background-color: rgb(220, 0, 0);
+}
+
+
+/* .outputs .searchBlock .con-table table thead{
+    background-color: #5f8db5;
+    color: white;
+}
+.outputs .searchBlock .con-table th tead{
+    
+} */
+
+/* @media (max-width:767px) {
+    .outputs .searchBlock .con-table table{
+    }
+} */
+/*End Inpots Outputs*/
