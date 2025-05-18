@@ -10,6 +10,11 @@ let category =document.getElementById("category");
 let submit =document.getElementById("submit");
 
 
+let a = document.createElement("div")
+a.className = "saeed"
+console.log(a)
+
+
 if(total.innerHTML === ""){
     total.style.backgroundColor = "red"
 }
@@ -83,14 +88,41 @@ function cleareData() {
 function ShowData() {
     let table = "";
     for(let i = 0; i<dataPro.length; i++){
-        table = dataPro[i];
+        table +=`
+            <tr>
+                <td>${i}</td>
+                <td>${dataPro[i].title}</td>
+                <td>${dataPro[i].price}</td>
+                <td>${dataPro[i].taxes}</td>
+                <td>${dataPro[i].ads}</td>
+                <td>${dataPro[i].discount}</td>
+                <td>${dataPro[i].total}</td>
+                <td>${dataPro[i].category}</td>
+                <td><button id="update">Update</button></td>
+                <td><button onclick="deleteProduct(${i})" id="delete">Delete</button></td>
+
+            </tr>`
     }
     document.querySelector("tbody").innerHTML = table
+
+    if(dataPro.length > 0){
+        let deleteAll =document.querySelector(".deleteAllBox").appendChild(document.createElement("button"))
+        deleteAll.className = "deleteAll"
+        deleteAll.textContent = "Delete All Data"
+    }
 }
-// function count(params) {
+
+
+
+
+function deleteProduct(id) {
+    dataPro.splice(id,1);
+    localStorage.Products = JSON.stringify(dataPro);
+    ShowData()
     
-// }
-// function deleteProduct(params) {
+}
+
+// function count(params) {
     
 // }
 // function update(params) {

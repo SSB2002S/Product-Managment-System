@@ -248,7 +248,23 @@ table tbody #delete:hover{
 background-color: rgb(220, 0, 0);
 }
 
-
+.deleteAllBox{
+    display: flex;
+}
+.deleteAll{
+background-color: red;
+    color: white;
+    width: 50%;
+    border: none;
+    margin: 16px auto;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.deleteAll:hover{
+background-color: rgb(220, 0, 0);
+}
 /* .outputs .searchBlock .con-table table thead{
     background-color: #5f8db5;
     color: white;
