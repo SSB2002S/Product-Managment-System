@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- normalize File -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="css/all.min.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <!-- stylesheet Library -->
     <link rel="stylesheet" href="css/sweetalert2.min.css">
+
     <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
     <title>Dashboard</title>
 </head>
@@ -42,8 +50,6 @@
                 <button class="btn" id="searchTitle">Search By Title</button>
                 <button class="btn"  id="searchCategory">Search By Category</button>
             </div>
-            <div class="deleteAllBox">
-            </div>
             <div class="con-table">
             <table>
                 <thead>
@@ -62,7 +68,9 @@
                 </tbody>
             </table>
             </div>
-
+            <div class="deleteAllBox">
+                <button class="deleteAllButton">Delete All</button>
+            </div>
         </div>
         </div>
     </section>
@@ -71,5 +79,6 @@
     </footer>
     <script src="js/main.js"></script>
     <script src="js/sweetalert2.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
 </body>
 </html>

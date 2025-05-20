@@ -3,7 +3,10 @@
     --primaryColor : #5f8db5;
     font-size: 16px;
 }
+*{
+    font-family: "Cairo", sans-serif;
 
+}
 .btn{
     width: 45%;
     background-color: var(--primaryColor);
@@ -31,6 +34,28 @@
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
+}
+.swal2-actions{
+display: flex
+;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.btn-success{
+    background-color: #2db62d;
+    width:  fit-content;
+}
+.btn-success:hover{
+    letter-spacing:0 ;
+    background-color: #149d14;
+}
+.btn-danger{
+    background-color: red;
+    width: fit-content;
+}
+.btn-danger:hover{
+    letter-spacing:0 ;
+    background-color:rgb(220, 0, 0);
 }
 
 /* @media (min-width: 768px) {
@@ -161,6 +186,7 @@ input::placeholder{
 .inputs [type="submit"]{
     margin-top: 16px;
     background-color: #2db62d;
+    font-weight: 700;
 }
 .inputs [type="submit"]:hover{
     background-color: #149d14;
@@ -251,7 +277,7 @@ background-color: rgb(220, 0, 0);
 .deleteAllBox{
     display: flex;
 }
-.deleteAll{
+.deleteAllButton{
 background-color: red;
     color: white;
     width: 50%;
@@ -261,8 +287,9 @@ background-color: red;
     border-radius: 4px;
     cursor: pointer;
     transition: 0.3s;
+    font-weight: 700;
 }
-.deleteAll:hover{
+.deleteAllButton:hover{
 background-color: rgb(220, 0, 0);
 }
 /* .outputs .searchBlock .con-table table thead{
