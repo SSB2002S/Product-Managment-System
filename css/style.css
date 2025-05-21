@@ -188,8 +188,15 @@ input::placeholder{
     background-color: #2db62d;
     font-weight: 700;
 }
+.inputs [type="submit"]:focus{
+    color: white;
+    letter-spacing: 0;
+    transform: scale(1);
+
+}
 .inputs [type="submit"]:hover{
     background-color: #149d14;
+
 }
 
 @media (max-width:767px) {

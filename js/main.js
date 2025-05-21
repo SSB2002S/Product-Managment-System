@@ -66,6 +66,7 @@ submit.onclick = function () {
         category : category.value,
     }
 
+    if(title.value != "" && price.value != "" && category.value != "" && count.value <= 100){
     if(mood === "Create"){
         if(newpro.count > 1){
             for(let i = 0; i< newpro.count; i++){
@@ -88,17 +89,24 @@ submit.onclick = function () {
         count.style.display = "block"
         category.style.width = "45%"
 
-
-
+        Swal.fire({
+        title: "Product Updated",
+        icon: "success",
+        timer: 1300,
+        showConfirmButton: false,
+        background: "white"
+        })
+    }
+        cleareData()
 
     }
+
     localStorage.setItem("Products",JSON.stringify(dataPro))
 
     
     deleteAllButton.style.display = "block";
     deleteAllButton.textContent = "Delete All" +" " + `(${dataPro.length})`
 
-    cleareData()
     ShowData()
 }
 
@@ -118,7 +126,9 @@ function cleareData() {
 }
 
 
+//Show Data
 function ShowData() {
+    getTotal();
     let table = "";
     for(let i = 0; i<dataPro.length; i++){
         table +=`
@@ -239,10 +249,75 @@ function updateProduct(id) {
     submit.value = "Update"
     mood = "Update";
     tmp = id;
+    if(total != ""){
+    total.style.backgroundColor = "var(--primaryColor)"
+    }
+
 }
-// function search(params) {
-    
-// }
+
+
+//Search
+let searchMood = 'Title';
+
+function search(id) {
+    let search = document.getElementById("search")
+    if(id === 'searchTitle'){
+        searchMood = 'Title';
+
+    }else{
+        searchMood = 'Category';
+    }
+    search.placeholder = `Sarch By ${searchMood}`
+
+    search.focus();
+    search.value = "";
+    ShowData();
+}
+
+
+function searchData(value){
+    let table = "";
+    for(let i = 0 ; i < dataPro.length ; i++){
+    if(searchMood === "Title"){
+            if(dataPro[i].title.toLowerCase().startsWith(value.toLowerCase())){
+                table +=`
+                    <tr>
+                        <td>${i}</td>
+                        <td>${dataPro[i].title}</td>
+                        <td>${dataPro[i].price}</td>
+                        <td>${dataPro[i].taxes}</td>
+                        <td>${dataPro[i].ads}</td>
+                        <td>${dataPro[i].discount}</td>
+                        <td>${dataPro[i].total}</td>
+                        <td>${dataPro[i].category}</td>
+                        <td><button onclick="updateProduct(${i})"  id="update">Update</button></td>
+                        <td><button onclick="deleteProduct(${i})" id="delete">Delete</button></td>  
+                    </tr>`
+            }
+        }
+    else{
+            if(dataPro[i].category.toLowerCase().startsWith(value.toLowerCase())){
+                table +=`
+                    <tr>
+                        <td>${i}</td>
+                        <td>${dataPro[i].title}</td>
+                        <td>${dataPro[i].price}</td>
+                        <td>${dataPro[i].taxes}</td>
+                        <td>${dataPro[i].ads}</td>
+                        <td>${dataPro[i].discount}</td>
+                        <td>${dataPro[i].total}</td>
+                        <td>${dataPro[i].category}</td>
+                        <td><button onclick="updateProduct(${i})"  id="update">Update</button></td>
+                        <td><button onclick="deleteProduct(${i})" id="delete">Delete</button></td>  
+                    </tr>`
+            
+        }
+    }}
+    document.querySelector("tbody").innerHTML = table;
+}
+
+
+//Cleane
 // function cleandata(params) {
     
 // }
